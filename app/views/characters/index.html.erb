@@ -1,0 +1,15 @@
+<h1>Character Index</h1>
+<%= button_to "Add Character", new_character_path, method: :get %>
+
+
+<ul>
+    <% @characters.each do |character| %>
+        <li> <%= link_to character.name, character_path(character) %> </li>
+        <% end %>
+</ul>
+
+
+
+<%= link_to "Home", home_path %>
+<br>
+<%= link_to "Universe Index", universes_path %>

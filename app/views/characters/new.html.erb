@@ -1,0 +1,27 @@
+<h1> Create a New Character </h1>
+
+<%= form_for @character do |f| %>
+    <%= f.label :name %>
+    <br>
+    <%= f.text_field :name %>
+    <br>
+    <br>
+    <%= f.label :universe_id %>
+    <br>
+    <%= f.select :universe_id, Universe.all.map{|universe| [universe.name, universe.id]} %>
+    <br>
+    <br>
+    <br>
+    <%= f.submit "Become GOD!" %>
+
+<% end %>
+<br>
+<br>
+<br>
+<br>
+
+<%= link_to "Home", home_path %>
+<br>
+<%= link_to "Universe Index", universes_path %>
+<br>
+<%= link_to "Character Index", characters_path %>

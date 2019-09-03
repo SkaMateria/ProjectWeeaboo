@@ -1,0 +1,15 @@
+<h1> Universes Index </h1>
+<%= button_to "Add Universe", new_universe_path, method: :get %>
+
+<ul>
+    <% @universes.each do |universe| %>
+        <li> 
+            <%= link_to universe.name, universe_path(universe) %> 
+        </li>
+    <% end %>
+</ul>
+
+
+<%= link_to "Home", home_path %>
+<br>
+<%= link_to "Character Index", characters_path %>

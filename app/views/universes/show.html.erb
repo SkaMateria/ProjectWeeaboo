@@ -1,0 +1,18 @@
+<h1> <%= @universe.name %> </h1>
+<%= button_to "Edit Universe", {action: "edit", id: @universe.id}, method: :get %>
+
+<ul>
+    <% @universe.character.each do |character| %>
+        <li> <%= link_to character.name, character_path(character) %> </li>
+    <% end %>
+</ul>
+
+<%= form_tag universe_path(@universe), method: "delete" do %>
+  <%= submit_tag "Delete Universe" %>
+<% end %>
+
+<%= link_to "Home", home_path %>
+<br>
+<%= link_to "Universe Index", universes_path %>
+<br>
+<%= link_to "Character Index", characters_path %>

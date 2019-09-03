@@ -1,0 +1,12 @@
+<%= form_for @character do |f| %>
+
+    <%= f.label 'Name' %><br>
+    <%= f.text_field :name %><br>
+
+    <%= f.label 'Universe' %><br>
+    <%= f.select :universe_id, Universe.all.map{|universe| [universe.name, universe.id]} %>
+
+    <%= f.submit 'Update Character' %>
+
+
+<%end%>
