@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_27_213910) do
+ActiveRecord::Schema.define(version: 2019_09_10_142527) do
+
+  create_table "appearances", force: :cascade do |t|
+    t.integer "character_id"
+    t.integer "medium_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
+    t.string "bio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "media", force: :cascade do |t|
+    t.string "name"
+    t.string "media_type"
     t.integer "universe_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

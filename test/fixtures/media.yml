@@ -2,8 +2,10 @@
 
 one:
   name: MyString
-  bio: MyString
+  media_type: MyString
+  universe_id: 1
 
 two:
   name: MyString
-  bio: MyString
+  media_type: MyString
+  universe_id: 1

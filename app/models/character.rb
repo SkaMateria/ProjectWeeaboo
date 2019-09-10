@@ -1,3 +1,4 @@
 class Character < ApplicationRecord
-    belongs_to :universe
+    has_many :media
+    has_many :appearances, through: :media
 end
