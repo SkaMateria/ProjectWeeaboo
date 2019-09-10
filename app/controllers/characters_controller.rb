@@ -34,14 +34,14 @@ class CharactersController < ApplicationController
     def update
         @character = Character.find(params[:id])
         @character.update(name: params[:character][:name],
-        universe_id: params[:character][:universe_id])
+        bio: params[:character][:bio])
         redirect_to character_path(@character)
     end
 
     private
 
     def character_params
-        params.require(:character).permit(:name, :universe_id)
+        params.require(:character).permit(:name, :bio)
     end
 
 end

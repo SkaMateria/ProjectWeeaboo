@@ -2,9 +2,17 @@
 <%= button_to "Edit Universe", {action: "edit", id: @universe.id}, method: :get %>
 
 <ul>
-    <% @universe.character.each do |character| %>
-        <li> <%= link_to character.name, character_path(character) %> </li>
+    <% @universe.media.each do |media| %>
+        <h2> <%= media.media_type %> </h2>
+        <hr align="left" style="width:40%">
+        <li> <%= link_to media.name, medium_path(media) %> </li>
     <% end %>
+
+
+    <h1>Characters</h1>
+    <% @universe.characters.each do |character| %>
+    <li> <%= link_to character.name, character_path(character) %> </li>
+    <%end%>
 </ul>
 
 <%= form_tag universe_path(@universe), method: "delete" do %>
