@@ -2,14 +2,26 @@
 
 
 <%= button_to "Edit Character", {action: "edit", id: @character.id}, method: :get %>
-
-<h3> <%= link_to "#{@character.universe.name}", universe_path(@character.universe) %> </h3>
-<br>
-
-
 <%= form_tag character_path(@character), method: "delete" do %>
     <%= submit_tag "Delete Character" %>
 <% end %>
+
+<h3> UNIVERSE: <%= link_to "#{@character.universes.first.name}", universe_path(@character.universes.first) %></h3>
+<hr>
+
+<h3> BIO: </h3>
+<p> <%= @character.bio %> </p>
+<hr>
+
+<h3> APPEARANCES: </h3>
+<% @character.media.each do |media| %>
+<ul>
+    <li> <%= media.media_type %> -- <%= link_to media.name, medium_path(media) %> </li>
+</ul>
+<%end%>
+
+
+
 
 
 <br>

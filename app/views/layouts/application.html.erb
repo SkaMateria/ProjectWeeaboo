@@ -10,6 +10,19 @@
   </head>
 
   <body>
+    <div>
+        <% if current_user %>
+          Welcome, <%= current_user.name %>
+          <%= form_tag "/logout" , method: "DELETE" do %>
+            <%= submit_tag "Log out" %>
+            <%= link_to "User Page", user_path(@user) %>
+          <% end %>
+        <% else %>
+        <%= link_to "Log in" , "/login" %>  |  
+        <%= link_to "Create Account", "/users/new"%>
+        <% end %>
+        <hr>
+      </div>
     <%= yield %>
   </body>
 </html>

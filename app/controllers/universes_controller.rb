@@ -1,5 +1,3 @@
-
-
 class UniversesController < ApplicationController
 
     def index

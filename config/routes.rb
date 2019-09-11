@@ -1,18 +1,14 @@
 Rails.application.routes.draw do
-  get 'media/index'
-  get 'media/show'
-  get 'media/new'
-  get 'media/create'
-  get 'media/edit'
-  get 'media/update'
-  get 'media/destroy'
-  get "/", to: "universes#home", as: :home 
-  
-
-  resources :characters
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/', to: 'universes#home', as: :home
   resources :universes
+  resources :characters
   resources :media
+  resources :users
 
-  get '/login', to: "sessions#new"
+
+  get '/login', to: "sessions#new", as: "login"
+  post '/login', to: "sessions#create"
+  delete "/logout", to: 'sessions#destroy'
   
 end
