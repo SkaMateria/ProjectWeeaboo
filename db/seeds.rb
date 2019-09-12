@@ -4,7 +4,6 @@ Universe.destroy_all
 berserk = Universe.find_or_create_by(name: "Berserk")
 
 berserk_manga = Medium.find_or_create_by(name: "Berserk", media_type: "Manga", universe_id: berserk.id)
-berserk_manga2 = Medium.find_or_create_by(name: "Berserkaaaa", media_type: "Manga", universe_id: berserk.id)
 berserk_game = Medium.find_or_create_by(name: "Sword of the Berserk: Guts' Rage", media_type: "Video Game", universe_id: berserk.id)
 berserk_series = Medium.find_or_create_by(name: "Berserk", media_type: "TV Series", universe_id: berserk.id)
 berserk_movie = Medium.find_or_create_by(name: "Berserk: The Golden Age Arc I - The Egg of the King", media_type: "Movie", universe_id: berserk.id)
@@ -82,19 +81,3 @@ Appearance.find_or_create_by(character_id: motoko.id, medium_id: ghost_manga.id)
 Appearance.find_or_create_by(character_id: motoko.id, medium_id: ghost_movie.id)
 Appearance.find_or_create_by(character_id: motoko.id, medium_id: ghost_series.id)
 
-# gto = Universe.create(name: "GTO: Great Teacher Onizuka")
-
-# gto_manga = Media.create(name: "", media_type: "Manga", universe_id: gto.id)
-# gto_series = Media.create(name: "", media_type: "TV Series", universe_id: gto.id)
-# gto_movie = Media.create(name: "", media_type: "Movie", universe_id: gto.id)
-# gto_game = Media.create(name: "", media_type: "Video Game", universe_id: gto.id)
-
-# onizuka = Character.create(name: "Eikichi Onizuka", bio: "Super interesting backstory...")
-# ryuji = Character.create(name: "Ryuji Danma", bio: "Super interesting backstory...")
-# urumi = Character.create(name: "Urumi Kanzaki", bio: "Super interesting backstory...")
-# tomoko = Character.create(name: "Tomoko Nomura", bio: "Super interesting backstory...")
-
-# Appearance.create(character_id: onizuka.id, medium_id: .id)
-# Appearance.create(character_id: onizuka.id, medium_id: .id)
-# Appearance.create(character_id: onizuka.id, medium_id: .id)
-# Appearance.create(character_id: onizuka.id, medium_id: .id)

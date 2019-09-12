@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    has_many :universes
-    has_many :media, through: :universes
+    has_many :favorites
+    has_many :universes, through: :favorites
     has_secure_password
 end

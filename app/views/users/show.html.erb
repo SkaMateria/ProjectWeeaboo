@@ -1,1 +1,10 @@
 <h1> Screw you, <%= @user.name %>!!! </h1>
+
+    <ul>
+        <% @user.universes.each do |universe| %>
+            <li> <%= link_to universe.name, universe_path(universe) %> </li>
+            <% end %>
+    </ul>
+
+
+<%= link_to "Home", home_path %>

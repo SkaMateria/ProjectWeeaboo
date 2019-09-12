@@ -15,7 +15,7 @@
           Welcome, <%= current_user.name %>
           <%= form_tag "/logout" , method: "DELETE" do %>
             <%= submit_tag "Log out" %>
-            <%= link_to "User Page", user_path(@user) %>
+            <%= link_to "User Page", user_path(current_user) %>
           <% end %>
         <% else %>
         <%= link_to "Log in" , "/login" %>  |  

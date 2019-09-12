@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :universes
   resources :characters
   resources :media
-  resources :users
+  resources :users, only: [:show, :new, :create]
+  resources :favorites, only: [:show, :new, :create, :destroy]
 
 
   get '/login', to: "sessions#new", as: "login"

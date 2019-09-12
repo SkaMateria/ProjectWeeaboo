@@ -1,7 +1,23 @@
 <h1> <%= @universe.name %> </h1>
+
 <%= button_to "Edit Universe", {action: "edit", id: @universe.id}, method: :get %>
+<%= form_tag universe_path(@universe), method: "delete" do %>
+  <%= submit_tag "Delete Universe" %>
+<% end %>
+<br>
+<br>
+<% if current_user %>
+    <%= form_for @universe.favorites.build do |f| %>
+        <%= f.hidden_field :universe_id, :value => @universe.id %>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+        <%= f.submit :"Add to Favorites"%>
+    <% end %>
+    <br>
+    <% end %>
 
 <ul>
+    
+    
     <% @universe.media.each do |media| %>
         <h2> <%= media.media_type %> </h2>
         <hr align="left" style="width:40%">
@@ -15,9 +31,6 @@
     <%end%>
 </ul>
 
-<%= form_tag universe_path(@universe), method: "delete" do %>
-  <%= submit_tag "Delete Universe" %>
-<% end %>
 
 <%= link_to "Home", home_path %>
 <br>
