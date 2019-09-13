@@ -6,7 +6,7 @@
     <%= submit_tag "Delete Character" %>
 <% end %>
 
-<h3> UNIVERSE: <%= link_to "#{@character.universes.first.name}", universe_path(@character.universes.first) %></h3>
+<h3> UNIVERSE: <%=  link_to "#{@character.universes.pick(:name)}", universes_path(@character.universes.first) %> </h3>
 <hr>
 
 <h3> BIO: </h3>

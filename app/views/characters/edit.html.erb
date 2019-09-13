@@ -4,7 +4,7 @@
     <%= f.text_field :name %><br>
 
     <%= f.label 'Universe' %><br>
-    <%= f.select :universe_id, Universe.all.map{|universe| [universe.name, universe.id]} %>
+    <%= f.select :universe_ids, Universe.all.collect{|universe| [universe.name, universe.id]}, {}, :multiple => true %>
 
     <%= f.submit 'Update Character' %>
 

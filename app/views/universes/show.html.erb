@@ -5,7 +5,6 @@
   <%= submit_tag "Delete Universe" %>
 <% end %>
 <br>
-<br>
 <% if current_user %>
     <%= form_for @universe.favorites.build do |f| %>
         <%= f.hidden_field :universe_id, :value => @universe.id %>
@@ -15,6 +14,9 @@
     <br>
     <% end %>
 
+    <h2>DESCRIPTION: </h2>
+    <p> <%= @universe.description %> </p>
+<br>
 <ul>
     
     
